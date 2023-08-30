@@ -109,6 +109,12 @@ variable "service_name" {
   default     = "frontend"
 }
 
+variable "external_service_name" {
+  type        = string
+  description = "Service name"
+  default     = "frontend-external"
+}
+
 # @hidden
 variable "walrus_metadata_service_name" {
   type        = string
