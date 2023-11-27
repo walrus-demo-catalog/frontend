@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI schema for template frontend
+components:
+  schemas:
+    variables:
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Name of the deployment resource. Auto-generated if empty.
+          default: ""
+          nullable: true
+          x-walrus-ui:
+            order: 1
+            group: Deploymemt
+        namespace:
+          title: Namespace
+          type: string
+          description: Namespace to deploy. Auto-generated if empty.
+          default: ""
+          nullable: true
+          x-walrus-ui:
+            order: 2
+            group: Deploymemt
+        replicas:
+          title: Replicas
+          type: number
+          description: Replicas to deploy
+          default: 1
+          nullable: true
+          x-walrus-ui:
+            order: 3
+            group: Deploymemt
+        productcatalogservice_name:
+          title: Productcatalogservice Name
+          type: string
+          description: The product catalog service name in env to connect
+          default: productcatalogservice
+          nullable: true
+          x-walrus-ui:
+            order: 4
+            group: Deploymemt
+        currencyservice_name:
+          title: Currencyservice Name
+          type: string
+          description: The currency service name in env to connect
+          default: currencyservice
+          nullable: true
+          x-walrus-ui:
+            order: 5
+            group: Deploymemt
+        cartservice_name:
+          title: Cartservice Name
+          type: string
+          description: The cart service name in env to connect
+          default: cartservice
+          nullable: true
+          x-walrus-ui:
+            order: 6
+            group: Deploymemt
+        recommendationservice_name:
+          title: Recommendationservice Name
+          type: string
+          description: The recommendation service name in env to connect
+          default: recommendationservice
+          nullable: true
+          x-walrus-ui:
+            order: 7
+            group: Deploymemt
+        shippingservice_name:
+          title: Shippingservice Name
+          type: string
+          description: The shipping service name in env to connect
+          default: shippingservice
+          nullable: true
+          x-walrus-ui:
+            order: 8
+            group: Deploymemt
+        checkoutservice_name:
+          title: Checkoutservice Name
+          type: string
+          description: The checkout service name in env to connect
+          default: checkoutservice
+          nullable: true
+          x-walrus-ui:
+            order: 9
+            group: Deploymemt
+        adservice_name:
+          title: Adservice Name
+          type: string
+          description: The ad service name in env to connect
+          default: adservice
+          nullable: true
+          x-walrus-ui:
+            order: 10
+            group: Deploymemt
+        image_registry:
+          title: Image Registry
+          type: string
+          description: Image registry
+          default: docker.io
+          nullable: true
+          x-walrus-ui:
+            order: 11
+            group: Image
+        image_repository:
+          title: Image Repository
+          type: string
+          description: Image repository
+          default: liyinlin
+          nullable: true
+          x-walrus-ui:
+            order: 12
+            group: Image
+        image_version:
+          title: Image Version
+          type: string
+          description: Image tag
+          default: v0.8.0
+          nullable: true
+          x-walrus-ui:
+            order: 13
+            group: Image
+        service_name:
+          title: Service Name
+          type: string
+          description: Service name
+          default: frontend
+          nullable: true
+          x-walrus-ui:
+            order: 14
+            group: Deploymemt
+        context:
+          title: Context
+          type: object
+          description: |
+            Receive contextual information. When Walrus deploys, Walrus will inject specific contextual information into this field.
+
+            Examples:
+            ```
+            context:
+              project:
+                name: string
+                id: string
+              environment:
+                name: string
+                id: string
+              resource:
+                name: string
+                id: string
+            ```
+          default: {}
+          nullable: true
+          additionalProperties:
+            type: object
+            x-walrus-ui:
+              colSpan: 12
+          x-walrus-ui:
+            colSpan: 12
+            order: 15
+            hidden: true
