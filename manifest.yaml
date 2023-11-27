@@ -4,6 +4,7 @@ metadata:
   name: frontend
   namespace: ${namespace}
 spec:
+  replicas: ${replicas}
   selector:
     matchLabels:
       app: frontend
@@ -14,7 +15,6 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
-      replicas: ${replicas}
       serviceAccountName: default
       securityContext:
         fsGroup: 1000
