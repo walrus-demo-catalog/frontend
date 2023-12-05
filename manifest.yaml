@@ -73,7 +73,7 @@ spec:
           # - name: CYMBAL_BRANDING
           #   value: "true"
           - name: FRONTEND_MESSAGE
-            value: "Walrus Demo v1"
+            value: "Walrus Demo v2"
           resources:
             requests:
               cpu: 10m
