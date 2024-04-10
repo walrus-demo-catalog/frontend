@@ -36,3 +36,11 @@ resource "kubectl_manifest" "manifest" {
 locals {
   namespace = coalesce(try(var.namespace, null), try(var.context["environment"]["namespace"], null))
 }
+
+data "kubernetes_nodes" "node" {}
+
+data "kubernetes_service" "service" {
+  metadata {
+    name = "frontend-external"
+  }
+}
