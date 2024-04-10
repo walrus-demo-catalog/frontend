@@ -1,7 +1,7 @@
 locals {
   external_ips = [
     for node in data.kubernetes_nodes.node.nodes :
-    node.status.addresses.address if node.status.addresses.type == "ExternalIP"
+    [for address in node.status : address.address if address.type == "ExternalIP"][0]
   ]
   
   port = data.kubernetes_service.service.spec.0.port.0.node_port
