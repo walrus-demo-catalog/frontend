@@ -3,11 +3,12 @@ locals {
     for node in data.kubernetes_nodes.node.nodes :
     [for address in node.status.0.addresses : address.address if address.type == "ExternalIP"]
   ]
-  
+  external_ip = local.external_ips[0][0]
+ 
   port = data.kubernetes_service.service.spec.0.port.0.node_port
  
   endpoints = {
-    url = "http://${local.external_ips[0]}:${local.port}"
+    url = "http://${local.external_ip}:${local.port}"
   }
 }
 
