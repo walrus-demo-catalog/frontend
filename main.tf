@@ -48,4 +48,8 @@ data "kubernetes_service" "service" {
     name = "frontend-external"
     namespace = local.namespace
   }
+
+  depends_on = [
+    kubectl_manifest.manifest
+  ]
 }
